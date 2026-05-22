@@ -1,3 +1,361 @@
-<script>
-document.write(unescape("%3C%21DOCTYPE%20html%3E%0D%0A%3Chtml%20lang%3D%22zh-CN%22%3E%0D%0A%0D%0A%3Chead%3E%0D%0A%20%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0D%0A%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice-width%2C%20initial-scale%3D1.0%22%3E%0D%0A%20%20%3Ctitle%3E%E7%B2%BE%E5%93%81%E8%B5%84%E6%BA%90%E6%94%B6%E8%97%8F%E4%BF%9D%E5%AD%98%3C%2Ftitle%3E%0D%0A%20%20%3Cstyle%3E%0D%0A%20%20%20%20body%2C%0D%0A%20%20%20%20html%20%7B%0D%0A%20%20%20%20%20%20margin%3A%200%3B%0D%0A%20%20%20%20%20%20padding%3A%200%3B%0D%0A%20%20%20%20%20%20width%3A%20100%25%3B%0D%0A%20%20%20%20%20%20min-height%3A%20100%25%3B%0D%0A%20%20%20%20%20%20overflow-x%3A%20hidden%3B%0D%0A%20%20%20%20%20%20overflow-y%3A%20auto%3B%0D%0A%20%20%20%20%20%20font-family%3A%20sans-serif%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20.container%20%7B%0D%0A%20%20%20%20%20%20position%3A%20relative%3B%0D%0A%20%20%20%20%20%20width%3A%20100%25%3B%0D%0A%20%20%20%20%20%20min-height%3A%20100vh%3B%0D%0A%20%20%20%20%20%20background-image%3A%20url%28%27.%2Fimgs%2Fbg.jpeg%27%29%3B%0D%0A%20%20%20%20%20%20background-size%3A%20cover%3B%0D%0A%20%20%20%20%20%20background-position%3A%20center%3B%0D%0A%20%20%20%20%20%20background-repeat%3A%20no-repeat%3B%0D%0A%20%20%20%20%20%20background-attachment%3A%20fixed%3B%0D%0A%20%20%20%20%20%20display%3A%20flex%3B%0D%0A%20%20%20%20%20%20flex-direction%3A%20column%3B%0D%0A%20%20%20%20%20%20align-items%3A%20center%3B%0D%0A%20%20%20%20%20%20z-index%3A%200%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20.container%3A%3Abefore%20%7B%0D%0A%20%20%20%20%20%20content%3A%20%27%27%3B%0D%0A%20%20%20%20%20%20position%3A%20absolute%3B%0D%0A%20%20%20%20%20%20top%3A%200%3B%0D%0A%20%20%20%20%20%20left%3A%200%3B%0D%0A%20%20%20%20%20%20width%3A%20100%25%3B%0D%0A%20%20%20%20%20%20height%3A%20100%25%3B%0D%0A%20%20%20%20%20%20background-color%3A%20rgba%280%2C%200%2C%200%2C%200.349%29%3B%0D%0A%20%20%20%20%20%20%2F%2A%20Semi-transparent%20black%20overlay%20%2A%2F%0D%0A%20%20%20%20%20%20z-index%3A%20-1%3B%0D%0A%20%20%20%20%20%20%2F%2A%20Place%20it%20behind%20the%20content%20%2A%2F%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20.top-section%20%7B%0D%0A%20%20%20%20%20%20margin-top%3A%2032px%3B%0D%0A%20%20%20%20%20%20display%3A%20flex%3B%0D%0A%20%20%20%20%20%20flex-direction%3A%20column%3B%0D%0A%20%20%20%20%20%20align-items%3A%20center%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20.logo%20%7B%0D%0A%20%20%20%20%20%20width%3A%2090px%3B%0D%0A%20%20%20%20%20%20height%3A%2090px%3B%0D%0A%20%20%20%20%20%20border-radius%3A%2015px%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20.title-large%20%7B%0D%0A%20%20%20%20%20%20font-size%3A%2024px%3B%0D%0A%20%20%20%20%20%20font-weight%3A%20bold%3B%0D%0A%20%20%20%20%20%20color%3A%20white%3B%0D%0A%20%20%20%20%20%20margin-top%3A%2010px%3B%0D%0A%20%20%20%20%20%20text-align%3A%20center%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20.title-small%20%7B%0D%0A%20%20%20%20%20%20font-size%3A%2016px%3B%0D%0A%20%20%20%20%20%20color%3A%20rgb%28226%2C%20223%2C%20223%29%3B%0D%0A%20%20%20%20%20%20margin-top%3A%205px%3B%0D%0A%20%20%20%20%20%20text-align%3A%20center%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20.middle-section%20%7B%0D%0A%20%20%20%20%20%20margin-top%3A%2020px%3B%0D%0A%20%20%20%20%20%20width%3A%2090%25%3B%0D%0A%20%20%20%20%20%20max-width%3A%20400px%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20.card%20%7B%0D%0A%20%20%20%20%20%20--border-size%3A%203px%3B%0D%0A%20%20%20%20%20%20--angle%3A%200deg%3B%0D%0A%0D%0A%20%20%20%20%20%20border%3A%20var%28--border-size%29%20solid%20transparent%3B%0D%0A%20%20%20%20%20%20border-radius%3A%2012px%3B%0D%0A%0D%0A%20%20%20%20%20%20%2F%2A%20%E5%85%B3%E9%94%AE%EF%BC%9A%E8%AE%BE%E7%BD%AE%E4%B8%89%E5%B1%82%E8%83%8C%E6%99%AF%20%2A%2F%0D%0A%20%20%20%20%20%20background-image%3A%0D%0A%20%20%20%20%20%20%20%20%2F%2A%20%E7%AC%AC1%E5%B1%82%20%28%E6%9C%80%E4%B8%8A%E5%B1%82%29%3A%20%E5%8D%8A%E9%80%8F%E6%98%8E%E7%99%BD%E8%89%B2%EF%BC%8C%E7%94%A8%E4%BA%8E%E5%8D%A1%E7%89%87%E5%86%85%E5%AE%B9%E5%8C%BA%E5%9F%9F%20%2A%2F%0D%0A%20%20%20%20%20%20%20%20linear-gradient%28to%20right%2C%20rgba%28255%2C%20255%2C%20255%2C%200.8%29%2C%20rgba%28255%2C%20255%2C%20255%2C%200.8%29%29%2C%0D%0A%0D%0A%20%20%20%20%20%20%20%20%2F%2A%20%E7%AC%AC2%E5%B1%82%20%28%E4%B8%AD%E9%97%B4%E5%B1%82%29%3A%20%E4%B8%8D%E9%80%8F%E6%98%8E%E7%9A%84%E6%B7%B1%E8%89%B2%EF%BC%8C%E7%94%A8%E4%BA%8E%E9%81%AE%E6%8C%A1%E6%B5%81%E5%85%89%20%2A%2F%0D%0A%20%20%20%20%20%20%20%20linear-gradient%28to%20right%2C%20%23222%2C%20%23222%29%2C%0D%0A%0D%0A%20%20%20%20%20%20%20%20%2F%2A%20%E7%AC%AC3%E5%B1%82%20%28%E6%9C%80%E4%B8%8B%E5%B1%82%29%3A%20%E5%BD%A9%E8%99%B9%E6%B8%90%E5%8F%98%EF%BC%8C%E7%94%A8%E4%BA%8E%E8%BE%B9%E6%A1%86%20%2A%2F%0D%0A%20%20%20%20%20%20%20%20conic-gradient%28from%20var%28--angle%29%2C%20%23ff0000%2C%20%23ffdd00%2C%20%2300ff00%2C%20%2300ffff%2C%20%230000ff%2C%20%23ff00ff%2C%20%23ff0000%29%3B%0D%0A%0D%0A%20%20%20%20%20%20%2F%2A%20%E5%85%B3%E9%94%AE%EF%BC%9A%E4%B8%BA%E4%B8%89%E5%B1%82%E8%83%8C%E6%99%AF%E5%88%86%E5%88%AB%E8%AE%BE%E7%BD%AE%E8%A3%81%E5%89%AA%E5%8C%BA%E5%9F%9F%20%2A%2F%0D%0A%20%20%20%20%20%20background-clip%3A%0D%0A%20%20%20%20%20%20%20%20padding-box%2C%0D%0A%20%20%20%20%20%20%20%20%2F%2A%20%E7%AC%AC1%E5%B1%82%E8%83%8C%E6%99%AF%E8%A3%81%E5%89%AA%E5%88%B0%20padding%20%E5%8C%BA%E5%9F%9F%20%2A%2F%0D%0A%20%20%20%20%20%20%20%20padding-box%2C%0D%0A%20%20%20%20%20%20%20%20%2F%2A%20%E7%AC%AC2%E5%B1%82%E8%83%8C%E6%99%AF%E4%B9%9F%E8%A3%81%E5%89%AA%E5%88%B0%20padding%20%E5%8C%BA%E5%9F%9F%20%2A%2F%0D%0A%20%20%20%20%20%20%20%20border-box%3B%0D%0A%20%20%20%20%20%20%2F%2A%20%E7%AC%AC3%E5%B1%82%E8%83%8C%E6%99%AF%E9%93%BA%E6%BB%A1%20border%20%E5%8C%BA%E5%9F%9F%20%2A%2F%0D%0A%0D%0A%20%20%20%20%20%20background-origin%3A%20border-box%3B%0D%0A%0D%0A%20%20%20%20%20%20animation%3A%20rainbow-border-spin%203s%20linear%20infinite%3B%0D%0A%0D%0A%20%20%20%20%20%20%2F%2A%20%E4%BB%A5%E4%B8%8B%E6%98%AF%E5%8E%9F%E6%9C%89%E7%9A%84%E5%B8%83%E5%B1%80%E6%A0%B7%E5%BC%8F%20%2A%2F%0D%0A%20%20%20%20%20%20padding%3A%208px%3B%0D%0A%20%20%20%20%20%20margin-bottom%3A%2010px%3B%0D%0A%20%20%20%20%20%20display%3A%20flex%3B%0D%0A%20%20%20%20%20%20align-items%3A%20center%3B%0D%0A%20%20%20%20%20%20justify-content%3A%20space-between%3B%0D%0A%20%20%20%20%20%20text-decoration%3A%20none%3B%0D%0A%20%20%20%20%20%20color%3A%20inherit%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20%2F%2A%20%E6%B3%A8%E5%86%8C%E4%B8%80%E4%B8%AA--angle%E5%8F%98%E9%87%8F%EF%BC%8C%E8%AE%A9%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8F%AF%E4%BB%A5%E5%AF%B9%E5%AE%83%E8%BF%9B%E8%A1%8C%E5%B9%B3%E6%BB%91%E7%9A%84%E5%8A%A8%E7%94%BB%E5%A4%84%E7%90%86%20%2A%2F%0D%0A%20%20%20%20%40property%20--angle%20%7B%0D%0A%20%20%20%20%20%20syntax%3A%20%27%3Cangle%3E%27%3B%0D%0A%20%20%20%20%20%20initial-value%3A%200deg%3B%0D%0A%20%20%20%20%20%20inherits%3A%20false%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20%2F%2A%20%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E6%97%8B%E8%BD%AC--angle%E5%8F%98%E9%87%8F%E7%9A%84%E5%8A%A8%E7%94%BB%20%2A%2F%0D%0A%20%20%20%20%40keyframes%20rainbow-border-spin%20%7B%0D%0A%20%20%20%20%20%20to%20%7B%0D%0A%20%20%20%20%20%20%20%20--angle%3A%20360deg%3B%0D%0A%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20.card-link%20%7B%0D%0A%20%20%20%20%20%20text-decoration%3A%20none%3B%0D%0A%20%20%20%20%20%20color%3A%20inherit%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20.card-icon%20%7B%0D%0A%20%20%20%20%20%20width%3A%2064px%3B%0D%0A%20%20%20%20%20%20height%3A%2064px%3B%0D%0A%20%20%20%20%20%20border-radius%3A%208px%3B%0D%0A%20%20%20%20%20%20object-fit%3A%20cover%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20.card-text%20%7B%0D%0A%20%20%20%20%20%20flex-grow%3A%201%3B%0D%0A%20%20%20%20%20%20margin-left%3A%2015px%3B%0D%0A%20%20%20%20%20%20margin-right%3A%2015px%3B%0D%0A%20%20%20%20%20%20font-size%3A%2016px%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20.card-arrow%20%7B%0D%0A%20%20%20%20%20%20width%3A%200%3B%0D%0A%20%20%20%20%20%20height%3A%200%3B%0D%0A%20%20%20%20%20%20border-top%3A%208px%20solid%20transparent%3B%0D%0A%20%20%20%20%20%20border-bottom%3A%208px%20solid%20transparent%3B%0D%0A%20%20%20%20%20%20border-left%3A%208px%20solid%20%23555%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20.bottom-section%20%7B%0D%0A%20%20%20%20%20%20position%3A%20absolute%3B%0D%0A%20%20%20%20%20%20bottom%3A%200%3B%0D%0A%20%20%20%20%20%20width%3A%20100%25%3B%0D%0A%20%20%20%20%20%20height%3A%20100px%3B%0D%0A%20%20%20%20%20%20background-color%3A%20rgba%28128%2C%20128%2C%20128%2C%200.5%29%3B%0D%0A%20%20%20%20%20%20display%3A%20flex%3B%0D%0A%20%20%20%20%20%20justify-content%3A%20center%3B%0D%0A%20%20%20%20%20%20align-items%3A%20center%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20.overlay%20%7B%0D%0A%20%20%20%20%20%20display%3A%20flex%3B%0D%0A%20%20%20%20%20%20gap%3A%2015px%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20.link-button%20%7B%0D%0A%20%20%20%20%20%20background-color%3A%20rgba%28255%2C%20255%2C%20255%2C%200.9%29%3B%0D%0A%20%20%20%20%20%20color%3A%20%23333%3B%0D%0A%20%20%20%20%20%20text-decoration%3A%20none%3B%0D%0A%20%20%20%20%20%20padding%3A%2010px%2020px%3B%0D%0A%20%20%20%20%20%20border-radius%3A%208px%3B%0D%0A%20%20%20%20%20%20font-size%3A%2014px%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20%23bookmark-overlay%20%7B%0D%0A%20%20%20%20%20%20position%3A%20fixed%3B%0D%0A%20%20%20%20%20%20top%3A%200%3B%0D%0A%20%20%20%20%20%20left%3A%200%3B%0D%0A%20%20%20%20%20%20width%3A%20100%25%3B%0D%0A%20%20%20%20%20%20height%3A%20100%25%3B%0D%0A%20%20%20%20%20%20background-color%3A%20rgba%280%2C%200%2C%200%2C%200.7%29%3B%0D%0A%20%20%20%20%20%20display%3A%20none%3B%0D%0A%20%20%20%20%20%20%2F%2A%20Initially%20hidden%20%2A%2F%0D%0A%20%20%20%20%20%20justify-content%3A%20center%3B%0D%0A%20%20%20%20%20%20align-items%3A%20center%3B%0D%0A%20%20%20%20%20%20z-index%3A%201000%3B%0D%0A%20%20%20%20%20%20cursor%3A%20pointer%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20.bookmark-popup%20%7B%0D%0A%20%20%20%20%20%20background-color%3A%20white%3B%0D%0A%20%20%20%20%20%20border-radius%3A%2010px%3B%0D%0A%20%20%20%20%20%20padding%3A%2020px%3B%0D%0A%20%20%20%20%20%20width%3A%2090%25%3B%0D%0A%20%20%20%20%20%20max-width%3A%20350px%3B%0D%0A%20%20%20%20%20%20cursor%3A%20default%3B%0D%0A%20%20%20%20%20%20box-shadow%3A%200%205px%2015px%20rgba%280%2C%200%2C%200%2C%200.3%29%3B%0D%0A%20%20%20%20%20%20text-align%3A%20left%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20.bookmark-header%20%7B%0D%0A%20%20%20%20%20%20font-size%3A%2018px%3B%0D%0A%20%20%20%20%20%20font-weight%3A%20bold%3B%0D%0A%20%20%20%20%20%20text-align%3A%20center%3B%0D%0A%20%20%20%20%20%20margin-bottom%3A%2015px%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20.bookmark-content%20p%20%7B%0D%0A%20%20%20%20%20%20margin%3A%2010px%200%3B%0D%0A%20%20%20%20%20%20line-height%3A%201.5%3B%0D%0A%20%20%20%20%20%20display%3A%20flex%3B%0D%0A%20%20%20%20%20%20align-items%3A%20center%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20.bookmark-content%20.inline-icon%20%7B%0D%0A%20%20%20%20%20%20width%3A%2020px%3B%0D%0A%20%20%20%20%20%20height%3A%2020px%3B%0D%0A%20%20%20%20%20%20margin%3A%200%205px%3B%0D%0A%20%20%20%20%20%20vertical-align%3A%20middle%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20.bookmark-content%20hr%20%7B%0D%0A%20%20%20%20%20%20border%3A%20none%3B%0D%0A%20%20%20%20%20%20border-top%3A%201px%20solid%20%23eee%3B%0D%0A%20%20%20%20%20%20margin%3A%2015px%200%3B%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20.bookmark-footer%20%7B%0D%0A%20%20%20%20%20%20margin-top%3A%2020px%3B%0D%0A%20%20%20%20%20%20font-size%3A%2012px%3B%0D%0A%20%20%20%20%20%20color%3A%20%23888%3B%0D%0A%20%20%20%20%20%20text-align%3A%20center%3B%0D%0A%20%20%20%20%7D%0D%0A%20%20%3C%2Fstyle%3E%0D%0A%20%20%3Cscript%3E%0D%0A%20%20%20%20function%20bookmarkPage%28%29%20%7B%0D%0A%20%20%20%20%20%20%2F%2F%20Simple%20check%20for%20mobile%20devices%20based%20on%20user%20agent%0D%0A%20%20%20%20%20%20const%20isMobile%20%3D%20%2FAndroid%7CwebOS%7CiPhone%7CiPad%7CiPod%7CBlackBerry%7CIEMobile%7COpera%20Mini%2Fi.test%28navigator.userAgent%29%3B%0D%0A%0D%0A%20%20%20%20%20%20if%20%28isMobile%29%20%7B%0D%0A%20%20%20%20%20%20%20%20%2F%2F%20On%20mobile%2C%20show%20the%20guide%20overlay%0D%0A%20%20%20%20%20%20%20%20const%20overlay%20%3D%20document.getElementById%28%27bookmark-overlay%27%29%3B%0D%0A%20%20%20%20%20%20%20%20if%20%28overlay%29%20%7B%0D%0A%20%20%20%20%20%20%20%20%20%20overlay.style.display%20%3D%20%27flex%27%3B%0D%0A%20%20%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%20%20%7D%20else%20%7B%0D%0A%20%20%20%20%20%20%20%20%2F%2F%20On%20PC%2C%20show%20the%20keyboard%20shortcut%20alert%0D%0A%20%20%20%20%20%20%20%20const%20isMac%20%3D%20navigator.platform.toUpperCase%28%29.indexOf%28%27MAC%27%29%20%3E%3D%200%3B%0D%0A%20%20%20%20%20%20%20%20const%20shortcut%20%3D%20isMac%20%3F%20%27Cmd%2F%E2%8C%98%20%2B%20D%27%20%3A%20%27Ctrl%20%2B%20D%27%3B%0D%0A%20%20%20%20%20%20%20%20alert%28%27%E6%8C%89%E4%B8%8B%20%27%20%2B%20shortcut%20%2B%20%27%20%E6%94%B6%E8%97%8F%E6%9C%AC%E9%A1%B5%27%29%3B%0D%0A%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%7D%0D%0A%0D%0A%20%20%20%20function%20hideBookmarkOverlay%28%29%20%7B%0D%0A%20%20%20%20%20%20const%20overlay%20%3D%20document.getElementById%28%27bookmark-overlay%27%29%3B%0D%0A%20%20%20%20%20%20if%20%28overlay%29%20%7B%0D%0A%20%20%20%20%20%20%20%20overlay.style.display%20%3D%20%27none%27%3B%0D%0A%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%7D%0D%0A%20%20%3C%2Fscript%3E%0D%0A%3C%2Fhead%3E%0D%0A%0D%0A%3Cbody%3E%0D%0A%20%20%3Cdiv%20class%3D%22container%22%3E%0D%0A%20%20%20%20%3Cdiv%20class%3D%22top-section%22%3E%0D%0A%20%20%20%20%20%20%3Cimg%20src%3D%22.%2Fimgs%2Flogo.jpeg%22%20alt%3D%22Logo%22%20class%3D%22logo%22%20onclick%3D%22bookmarkPage%28%29%22%20title%3D%22%E7%82%B9%E5%87%BB%E6%94%B6%E8%97%8F%E6%9C%AC%E9%A1%B5%22%3E%0D%0A%20%20%20%20%20%20%3Cdiv%20class%3D%22title-large%22%3E%E7%B2%BE%E5%93%81%E8%B5%84%E6%BA%90%E5%B0%BD%E5%9C%A8%E5%85%B6%E4%B8%AD%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%3Cdiv%20class%3D%22title-small%22%3E%E6%94%B6%E5%BD%95%E5%85%A8%E7%BD%91%E6%9C%80%E6%96%B0%E3%80%81%E6%9C%80%E5%85%A8%E8%B5%84%E6%BA%90%3C%2Fdiv%3E%0D%0A%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%3Cdiv%20class%3D%22middle-section%22%3E%0D%0A%20%20%20%20%20%20%3Ca%20href%3D%22https%3A%2F%2F5kx8c.com%22%20class%3D%22card-link%22%3E%0D%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Cimg%20src%3D%22.%2Fimgs%2Fjin.jpeg%22%20alt%3D%22Icon%201%22%20class%3D%22card-icon%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card-text%22%3E%E5%8F%8D%E5%B7%AE%E6%AF%8D%E5%A9%8A%E3%80%81%E4%BA%BA%20%F0%9F%86%9A%20%F0%9F%90%B6%E3%80%81%E7%A8%80%E7%BC%BA%E8%B5%84%E6%BA%90%E7%82%B9%E8%BF%99%E9%87%8C%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card-arrow%22%3E%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%3C%2Fa%3E%0D%0A%20%20%20%20%20%20%3Ca%20href%3D%22https%3A%2F%2F3a5zh.com%22%20class%3D%22card-link%22%3E%0D%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Cimg%20src%3D%22.%2Fimgs%2Fyou.jpeg%22%20alt%3D%22Icon%202%22%20class%3D%22card-icon%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card-text%22%3E91%E5%A4%A7%E7%A5%9E%E3%80%81%E5%9B%BD%E4%BA%A7%E5%8E%9F%E5%88%9B%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card-arrow%22%3E%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%3C%2Fa%3E%0D%0A%20%20%20%20%20%20%3Ca%20href%3D%22https%3A%2F%2Fvw7ky.com%22%20class%3D%22card-link%22%3E%0D%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Cimg%20src%3D%22.%2Fimgs%2Fan.jpeg%22%20alt%3D%22Icon%203%22%20class%3D%22card-icon%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card-text%22%3E%E6%9A%97%E7%BD%91%E6%B5%81%E5%87%BA%E3%80%81%E8%B0%9C%F0%9F%97%A1%EF%B8%8F%E5%BC%BA%F0%9F%97%A1%EF%B8%8F%EF%BC%8C%E7%8B%AC%E5%AE%B6%E5%8E%9F%E5%88%9B%E6%9D%A5%E8%BF%99%E9%87%8C%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card-arrow%22%3E%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%3C%2Fa%3E%0D%0A%20%20%20%20%20%20%3Ca%20href%3D%22https%3A%2F%2F7xca2.com%22%20class%3D%22card-link%22%3E%0D%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Cimg%20src%3D%22.%2Fimgs%2Flold.jpeg%22%20alt%3D%22Icon%202%22%20class%3D%22card-icon%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card-text%22%3E%E5%91%A6%E5%A5%B3%E8%90%9D%E8%8E%89%E3%80%81%E6%9C%AB%E6%88%90%E5%B9%B4%E5%A6%B9%E5%A6%B9%E3%80%81%E5%B0%8F%F0%9F%90%8E%E6%8B%89%E5%A4%A7%E8%BD%A6%E7%9C%8B%E8%BF%99%E9%87%8C%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card-arrow%22%3E%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%3C%2Fa%3E%0D%0A%20%20%20%20%20%20%3Ca%20href%3D%22https%3A%2F%2Fz5n8.top%22%20class%3D%22card-link%22%3E%0D%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Cimg%20src%3D%22.%2Fimgs%2Fyue.jpeg%22%20alt%3D%22Icon%202%22%20class%3D%22card-icon%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card-text%22%3E%E7%BA%BF%E4%B8%8B%F0%9F%88%B7%EF%B8%8F%E7%A0%B2%E3%80%81%E5%90%8C%E5%9F%8E%E9%85%8D%E9%80%81%E3%80%81%E5%85%A8%E5%9B%BD%E9%85%8D%E9%80%81%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card-arrow%22%3E%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%3C%2Fa%3E%0D%0A%20%20%20%20%20%20%3C%21--%20%3Ca%20href%3D%22https%3A%2F%2Fw4dj.cc%22%20class%3D%22card-link%22%3E%0D%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Cimg%20src%3D%22.%2Fimgs%2Flold.jpeg%22%20alt%3D%22Icon%202%22%20class%3D%22card-icon%22%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card-text%22%3E%E8%90%9D%E8%8E%89%F0%9F%8F%9D%EF%B8%8F%E6%9C%AA%E5%85%AC%E5%B8%83%E8%B5%84%E6%96%99%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22card-arrow%22%3E%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%3C%2Fa%3E%20--%3E%0D%0A%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%3C%21--%20%3Cdiv%20class%3D%22bottom-section%22%3E%0D%0A%20%20%20%20%20%20%3Cdiv%20class%3D%22overlay%22%3E%0D%0A%20%20%20%20%20%20%20%20%3Ca%20href%3D%22%23%22%20class%3D%22link-button%22%3ELink%201%3C%2Fa%3E%0D%0A%20%20%20%20%20%20%20%20%3Ca%20href%3D%22%23%22%20class%3D%22link-button%22%3ELink%202%3C%2Fa%3E%0D%0A%20%20%20%20%20%20%20%20%3Ca%20href%3D%22%23%22%20class%3D%22link-button%22%3ELink%203%3C%2Fa%3E%0D%0A%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%3C%2Fdiv%3E%20--%3E%0D%0A%20%20%3C%2Fdiv%3E%0D%0A%20%20%3Cdiv%20id%3D%22bookmark-overlay%22%20onclick%3D%22hideBookmarkOverlay%28%29%22%3E%0D%0A%20%20%20%20%3Cdiv%20class%3D%22bookmark-popup%22%3E%0D%0A%20%20%20%20%20%20%3Cdiv%20class%3D%22bookmark-header%22%3E%E5%A6%82%E4%BD%95%E6%94%B6%E8%97%8F%2F%E6%B7%BB%E5%8A%A0%E5%88%B0%E4%B8%BB%E5%B1%8F%E5%B9%95%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%3Cdiv%20class%3D%22bookmark-content%22%3E%0D%0A%20%20%20%20%20%20%20%20%3Cp%3E%3Cstrong%3E%E8%8B%B9%E6%9E%9C%20iOS%20%28Safari%29%3A%3C%2Fstrong%3E%3C%2Fp%3E%0D%0A%20%20%20%20%20%20%20%20%3Cp%3E%E7%82%B9%E5%87%BB%E5%BA%95%E9%83%A8%E8%8F%9C%E5%8D%95%E6%A0%8F%E7%9A%84%20%3Cimg%20src%3D%22https%3A%2F%2Fi.imgur.com%2Fb1B3aI4.png%22%20class%3D%22inline-icon%22%3E%20%22%E5%88%86%E4%BA%AB%22%20%E6%8C%89%E9%92%AE%EF%BC%8C%E7%84%B6%E5%90%8E%E9%80%89%E6%8B%A9%20%22%E6%B7%BB%E5%8A%A0%E5%88%B0%E4%B8%BB%E5%B1%8F%E5%B9%95%22%E3%80%82%3C%2Fp%3E%0D%0A%20%20%20%20%20%20%20%20%3Chr%3E%0D%0A%20%20%20%20%20%20%20%20%3Cp%3E%3Cstrong%3E%E5%AE%89%E5%8D%93%20%28Chrome%29%3A%3C%2Fstrong%3E%3C%2Fp%3E%0D%0A%20%20%20%20%20%20%20%20%3Cp%3E%E7%82%B9%E5%87%BB%E5%8F%B3%E4%B8%8A%E8%A7%92%E7%9A%84%20%3Cimg%20src%3D%22https%3A%2F%2Fi.imgur.com%2FvQ5k1Qd.png%22%20class%3D%22inline-icon%22%3E%20%22%E8%8F%9C%E5%8D%95%22%20%E6%8C%89%E9%92%AE%EF%BC%8C%E7%84%B6%E5%90%8E%E9%80%89%E6%8B%A9%20%22%E6%B7%BB%E5%8A%A0%E5%88%B0%E4%B8%BB%E5%B1%8F%E5%B9%95%22%E3%80%82%3C%2Fp%3E%0D%0A%20%20%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%20%20%20%20%3Cdiv%20class%3D%22bookmark-footer%22%3E%E7%82%B9%E5%87%BB%E4%BB%BB%E6%84%8F%E4%BD%8D%E7%BD%AE%E5%85%B3%E9%97%AD%3C%2Fdiv%3E%0D%0A%20%20%20%20%3C%2Fdiv%3E%0D%0A%20%20%3C%2Fdiv%3E%0D%0A%20%20%3C%21--%20%3Cscript%3E%0D%0A%20%20%20%20document.addEventListener%28%27DOMContentLoaded%27%2C%20function%20%28%29%20%7B%0D%0A%20%20%20%20%20%20const%20urls%20%3D%20%5B%27https%3A%2F%2Fc8829ebf.vtpt3bx.top%2Fcontent.html%3FchannelCode%3DA00219%27%2C%20%27https%3A%2F%2Fafcd21b8.umc30s8v.top%2Fcontent.html%3FchannelCode%3DA00098%27%5D%3B%0D%0A%20%20%20%20%20%20const%20randomLink%20%3D%20document.getElementById%28%27random-link%27%29%3B%0D%0A%20%20%20%20%20%20if%20%28randomLink%29%20%7B%0D%0A%20%20%20%20%20%20%20%20const%20randomIndex%20%3D%20Math.random%28%29%20%3C%200.5%20%3F%200%20%3A%201%3B%0D%0A%20%20%20%20%20%20%20%20randomLink.href%20%3D%20urls%5BrandomIndex%5D%3B%0D%0A%20%20%20%20%20%20%7D%0D%0A%20%20%20%20%7D%29%3B%0D%0A%20%20%3C%2Fscript%3E%20--%3E%0D%0A%3C%2Fbody%3E%0D%0A%0D%0A%3C%2Fhtml%3E"));
-</script>
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>精品资源收藏保存</title>
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      font-family: sans-serif;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      background-image: url('./imgs/bg.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 0;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.349);
+      /* Semi-transparent black overlay */
+      z-index: -1;
+      /* Place it behind the content */
+    }
+
+    .top-section {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      width: 90px;
+      height: 90px;
+      border-radius: 15px;
+    }
+
+    .title-large {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .title-small {
+      font-size: 16px;
+      color: rgb(226, 223, 223);
+      margin-top: 5px;
+      text-align: center;
+    }
+
+    .middle-section {
+      margin-top: 20px;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .card {
+      --border-size: 3px;
+      --angle: 0deg;
+
+      border: var(--border-size) solid transparent;
+      border-radius: 12px;
+
+      /* 关键：设置三层背景 */
+      background-image:
+        /* 第1层 (最上层): 半透明白色，用于卡片内容区域 */
+        linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+
+        /* 第2层 (中间层): 不透明的深色，用于遮挡流光 */
+        linear-gradient(to right, #222, #222),
+
+        /* 第3层 (最下层): 彩虹渐变，用于边框 */
+        conic-gradient(from var(--angle), #ff0000, #ffdd00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
+
+      /* 关键：为三层背景分别设置裁剪区域 */
+      background-clip:
+        padding-box,
+        /* 第1层背景裁剪到 padding 区域 */
+        padding-box,
+        /* 第2层背景也裁剪到 padding 区域 */
+        border-box;
+      /* 第3层背景铺满 border 区域 */
+
+      background-origin: border-box;
+
+      animation: rainbow-border-spin 3s linear infinite;
+
+      /* 以下是原有的布局样式 */
+      padding: 8px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 注册一个--angle变量，让浏览器可以对它进行平滑的动画处理 */
+    @property --angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+    /* 定义一个旋转--angle变量的动画 */
+    @keyframes rainbow-border-spin {
+      to {
+        --angle: 360deg;
+      }
+    }
+
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .card-text {
+      flex-grow: 1;
+      margin-left: 15px;
+      margin-right: 15px;
+      font-size: 16px;
+    }
+
+    .card-arrow {
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-left: 8px solid #555;
+    }
+
+    .bottom-section {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100px;
+      background-color: rgba(128, 128, 128, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .overlay {
+      display: flex;
+      gap: 15px;
+    }
+
+    .link-button {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #333;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    #bookmark-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: none;
+      /* Initially hidden */
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      cursor: pointer;
+    }
+
+    .bookmark-popup {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      width: 90%;
+      max-width: 350px;
+      cursor: default;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      text-align: left;
+    }
+
+    .bookmark-header {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .bookmark-content p {
+      margin: 10px 0;
+      line-height: 1.5;
+      display: flex;
+      align-items: center;
+    }
+
+    .bookmark-content .inline-icon {
+      width: 20px;
+      height: 20px;
+      margin: 0 5px;
+      vertical-align: middle;
+    }
+
+    .bookmark-content hr {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 15px 0;
+    }
+
+    .bookmark-footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+    }
+  </style>
+  <script>
+    function bookmarkPage() {
+      // Simple check for mobile devices based on user agent
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+      if (isMobile) {
+        // On mobile, show the guide overlay
+        const overlay = document.getElementById('bookmark-overlay');
+        if (overlay) {
+          overlay.style.display = 'flex';
+        }
+      } else {
+        // On PC, show the keyboard shortcut alert
+        const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+        const shortcut = isMac ? 'Cmd/⌘ + D' : 'Ctrl + D';
+        alert('按下 ' + shortcut + ' 收藏本页');
+      }
+    }
+
+    function hideBookmarkOverlay() {
+      const overlay = document.getElementById('bookmark-overlay');
+      if (overlay) {
+        overlay.style.display = 'none';
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="top-section">
+      <img src="./imgs/logo.jpeg" alt="Logo" class="logo" onclick="bookmarkPage()" title="点击收藏本页">
+      <div class="title-large">精品资源尽在其中</div>
+      <div class="title-small">收录全网最新、最全资源</div>
+    </div>
+    <div class="middle-section">
+      <a href="https://5kx8c.com" class="card-link">
+        <div class="card">
+          <img src="./imgs/jin.jpeg" alt="Icon 1" class="card-icon">
+          <div class="card-text">反差母婊、人 🆚 🐶、稀缺资源点这里</div>
+          <div class="card-arrow"></div>
+        </div>
+      </a>
+      <a href="https://3a5zh.com" class="card-link">
+        <div class="card">
+          <img src="./imgs/you.jpeg" alt="Icon 2" class="card-icon">
+          <div class="card-text">91大神、国产原创</div>
+          <div class="card-arrow"></div>
+        </div>
+      </a>
+      <a href="https://vw7ky.com" class="card-link">
+        <div class="card">
+          <img src="./imgs/an.jpeg" alt="Icon 3" class="card-icon">
+          <div class="card-text">暗网流出、谜🗡️强🗡️，独家原创来这里</div>
+          <div class="card-arrow"></div>
+        </div>
+      </a>
+      <a href="https://7xca2.com" class="card-link">
+        <div class="card">
+          <img src="./imgs/lold.jpeg" alt="Icon 2" class="card-icon">
+          <div class="card-text">呦女萝莉、末成年妹妹、小🐎拉大车看这里 </div>
+          <div class="card-arrow"></div>
+        </div>
+      </a>
+      <a href="https://z5n8.top" class="card-link">
+        <div class="card">
+          <img src="./imgs/yue.jpeg" alt="Icon 2" class="card-icon">
+          <div class="card-text">线下🈷️砲、同城配送、全国配送 </div>
+          <div class="card-arrow"></div>
+        </div>
+      </a>
+      <!-- <a href="https://w4dj.cc" class="card-link">
+        <div class="card">
+          <img src="./imgs/lold.jpeg" alt="Icon 2" class="card-icon">
+          <div class="card-text">萝莉🏝️未公布资料</div>
+          <div class="card-arrow"></div>
+        </div>
+      </a> -->
+    </div>
+    <!-- <div class="bottom-section">
+      <div class="overlay">
+        <a href="#" class="link-button">Link 1</a>
+        <a href="#" class="link-button">Link 2</a>
+        <a href="#" class="link-button">Link 3</a>
+      </div>
+    </div> -->
+  </div>
+  <div id="bookmark-overlay" onclick="hideBookmarkOverlay()">
+    <div class="bookmark-popup">
+      <div class="bookmark-header">如何收藏/添加到主屏幕</div>
+      <div class="bookmark-content">
+        <p><strong>苹果 iOS (Safari):</strong></p>
+        <p>点击底部菜单栏的 <img src="https://i.imgur.com/b1B3aI4.png" class="inline-icon"> "分享" 按钮，然后选择 "添加到主屏幕"。</p>
+        <hr>
+        <p><strong>安卓 (Chrome):</strong></p>
+        <p>点击右上角的 <img src="https://i.imgur.com/vQ5k1Qd.png" class="inline-icon"> "菜单" 按钮，然后选择 "添加到主屏幕"。</p>
+      </div>
+      <div class="bookmark-footer">点击任意位置关闭</div>
+    </div>
+  </div>
+  <!-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const urls = ['https://c8829ebf.vtpt3bx.top/content.html?channelCode=A00219', 'https://afcd21b8.umc30s8v.top/content.html?channelCode=A00098'];
+      const randomLink = document.getElementById('random-link');
+      if (randomLink) {
+        const randomIndex = Math.random() < 0.5 ? 0 : 1;
+        randomLink.href = urls[randomIndex];
+      }
+    });
+  </script> -->
+</body>
+
+</html>
